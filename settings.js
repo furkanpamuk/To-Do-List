@@ -1,7 +1,14 @@
 
 let inputDOM = document.querySelector('#task')
-let ulliDOM = document.querySelectorAll('ul#list > li')
-console.log(ulliDOM)
+let allLiDOM = document.querySelectorAll('li')
+console.log(allLiDOM)
+
+allLiDOM.forEach ( item => item.addEventListener('click',addClass))
+
+function addClass(event){
+    this.className == "checked" ?this.classList.remove("checked") :this.classList.add("checked")
+    
+}
 
 let BtnDOM = document.querySelector('#liveToastBtn')
 
@@ -17,7 +24,6 @@ function newElement(event){
     ulDOM.append(liDOM)
     inputDOM.value = ""
 }
-
 
 
 
