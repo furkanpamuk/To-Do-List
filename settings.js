@@ -32,3 +32,11 @@ function addClass(event){
 
 console.log(allLiDOM)
 
+let spanDOM = document.querySelectorAll('ul#list>li>span')
+console.log(spanDOM)
+
+spanDOM.forEach( item => item.addEventListener('click',deleteTask))
+
+function deleteTask(event){
+    this.parentElement.remove();
+}
