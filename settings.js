@@ -3,6 +3,26 @@ let inputDOM = document.querySelector('#task')
 let allLiDOM = document.querySelectorAll('li')
 console.log(allLiDOM)
 
+let BtnDOM = document.querySelector('#liveToastBtn')
+
+BtnDOM.addEventListener('onclick',newElement)
+
+inputDOM.addEventListener('keydown', (event) => {
+    if (event.key === "Enter" ) {
+        newElement() 
+    }
+} )
+
+let ulDOM = document.querySelector('#list')
+
+function newElement(event){
+    let liDOM = document.createElement('li')
+    liDOM.innerHTML = `${inputDOM.value} <span>X</span>`
+    ulDOM.append(liDOM)
+    inputDOM.value = ""
+    liDOM.addEventListener('click',addClass)
+}
+
 allLiDOM.forEach ( item => item.addEventListener('click',addClass))
 
 function addClass(event){
@@ -10,21 +30,5 @@ function addClass(event){
     
 }
 
-let BtnDOM = document.querySelector('#liveToastBtn')
-
-BtnDOM.addEventListener('onclick',newElement)
-
-
-
-let ulDOM = document.querySelector('#list')
-
-function newElement(event){
-    let liDOM = document.createElement('li')
-    liDOM.innerHTML = inputDOM.value
-    ulDOM.append(liDOM)
-    inputDOM.value = ""
-}
-
-
-
+console.log(allLiDOM)
 
