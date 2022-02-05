@@ -1,5 +1,8 @@
-let SuccessLiveToast = document.querySelector("#liveToast_success")
-let ErrorLiveToast = document.querySelector("#liveToast_error")
+/* let SuccessLiveToast = document.querySelector("#liveToast_success")
+let ErrorLiveToast = document.querySelector("#liveToast_error") */
+
+
+
 let closeBtn = document.querySelectorAll('.close')
 let inputDOM = document.querySelector('#task')
 let allLiDOM = document.querySelectorAll('li')
@@ -20,15 +23,14 @@ spanDOM.forEach(item => item.addEventListener('click', deleteTask))
 
 
 function closeLiveToast(event) {
-    ErrorLiveToast.classList.replace('show', 'hide')
-    SuccessLiveToast.classList.replace('show', 'hide')
+    $('#liveToast_error').toast('hide')
+    $('#liveToast_success').toast('hide')
 }
 
 function newElement(event) {
 
     if (inputDOM.value.trim() == '') {
-        ErrorLiveToast.classList.replace('hide', 'show')
-        SuccessLiveToast.classList.replace('show', 'hide')
+        $('#liveToast_error').toast('show')
         inputDOM.value = ""
     } else {
         let liDOM = document.createElement('li')
@@ -38,8 +40,7 @@ function newElement(event) {
         ulDOM.append(liDOM)
         liDOM.append(newSpan)
         inputDOM.value = ""
-        SuccessLiveToast.classList.replace('hide', 'show')
-        ErrorLiveToast.classList.replace('show', 'hide')
+        $('#liveToast_success').toast('show')
         liDOM.addEventListener('click', addClass)
         newSpan.addEventListener('click', deleteTask)
     }
