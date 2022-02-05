@@ -33,6 +33,7 @@ function newElement(event) {
 
     if (inputDOM.value.trim() == '') {
         ErrorLiveToast.classList.replace('hide', 'show')
+        SuccessLiveToast.classList.replace('show','hide')
         inputDOM.value = ""
     } else {
         let liDOM = document.createElement('li')
@@ -43,7 +44,7 @@ function newElement(event) {
         liDOM.append(newSpan)
         inputDOM.value = ""
         SuccessLiveToast.classList.replace('hide', 'show')
-
+        ErrorLiveToast.classList.replace('show', 'hide')
         liDOM.addEventListener('click', addClass)
         newSpan.addEventListener('click', deleteTask)
     }
