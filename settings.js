@@ -5,8 +5,7 @@ let BtnDOM = document.querySelector('#liveToastBtn')
 let ulDOM = document.querySelector('#list')
 let spanDOM = document.querySelectorAll('ul#list>li>span')
 
-closeBtn[0].addEventListener('click', closeLiveToast)
-closeBtn[1].addEventListener('click', closeLiveToast)
+
 BtnDOM.addEventListener('onclick', newElement)
 inputDOM.addEventListener('keydown', event => {
     if (event.key === "Enter") {
@@ -15,6 +14,7 @@ inputDOM.addEventListener('keydown', event => {
 })
 allLiDOM.forEach(item => item.addEventListener('click', addClass))
 spanDOM.forEach(item => item.addEventListener('click', deleteTask))
+closeBtn.forEach( item => item.addEventListener('click', closeLiveToast))
 
 function closeLiveToast(event) {
     $('#liveToast_error').toast('hide')
