@@ -5,7 +5,6 @@ let BtnDOM = document.querySelector('#liveToastBtn')
 let ulDOM = document.querySelector('#list')
 let spanDOM = document.querySelectorAll('ul#list>li>span')
 
-
 BtnDOM.addEventListener('onclick', newElement)
 inputDOM.addEventListener('keydown', event => {
     if (event.key === "Enter") {
