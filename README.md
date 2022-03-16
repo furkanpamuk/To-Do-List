@@ -11,9 +11,9 @@
 
 1. Bir dosya oluşturulur.
 2. Üzerine sağ tıklanıp terminal açılır.
-3. Aşağıdaki metin terminale yazılarak proje kopyalanır.
+3. Aşağıdaki metin terminale yazılarak proje kopyalanır. <br>
 `git clone https://github.com/furkanpamuk/To-Do-List.git` 
-4. Aşağıdaki metin terminale yazılarak Visual Studio Code ile proje açılır.  
+4. Aşağıdaki metin terminale yazılarak Visual Studio Code ile proje açılır.  <br>
 `code .`
     
 <br>
